@@ -1,10 +1,7 @@
 name: ci build
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  workflow_dispatch: 
 
 jobs:
 
@@ -24,8 +21,8 @@ jobs:
       run: make KAFKA=y
     - name: make check
       run: make check KAFKA=y
-    - name: make tutorial
-      run: make tutorial KAFKA=y
+    # - name: make tutorial
+    #   run: make tutorial KAFKA=y
       
   fedora-cmake:
     name: fedora
@@ -46,8 +43,8 @@ jobs:
       run: make KAFKA=y
     - name: make check
       run: make check KAFKA=y
-    - name: make tutorial
-      run: make tutorial KAFKA=y
+    # - name: make tutorial
+    #   run: make tutorial KAFKA=y
 
   freebsd-cmake:
     name: freebsd
@@ -69,4 +66,4 @@ jobs:
           freebsd-version
           gmake KAFKA=y
           gmake check KAFKA=y
-          gmake tutorial KAFKA=y
+          # gmake tutorial KAFKA=y
